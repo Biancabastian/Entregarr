@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar produto | VB Store </title>
+    <link rel="stylesheet" href="/css/estilo.css">
+</head>
+<body>
+
+    <main class="admin-container">
+        <div class="admin-header">
+            <div>
+                <h1>Editar produto</h1>
+                <p>Altere as informações do produto cadastrado.</p>
+            </div>
+
+            <a href="/admin/produtos" class="btn-voltar">Voltar</a>
+        </div>
+
+        <form
+            action="/admin/produtos/editar/<%= produto.id %>"
+            method="POST"
+            enctype="multipart/form-data"
+            class="admin-form"
+        >
+            <div class="campo">
+                <label for="nome">Nome do produto</label>
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    value="<%= produto.nome || '' %>"
+                    required
+                >
+            </div>
+
+            <div class="campo">
+                <label for="categoria">Categoria</label>
+                <select id="categoria" name="categoria" required>
+                    <% categorias.forEach(categoria => { %>
+                        <option
+                            value="<%= categoria.nome %>"
+                            <%= produto.categoria === categoria.nome ? 'selected' : '' %>
+                        >
+                            <%= categoria.nome %>
+                        </option>
+                    <% }) %>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="descricao">Descrição</label>
+                <textarea
+                    id="descricao"
+                    name="descricao"
+                    rows="5"
+                ><%= produto.descricao || '' %></textarea>
+            </div>
+
+            <div class="form-linha">
+                <div class="campo">
+                    <label for="valor">Preço (R$)</label>
+                    <input
+                        type="number"
+                        id="valor"
+                        name="valor"
+                        min="0"
+                        step="0.01"
+                        value="<%= produto.valor ?? '' %>"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="estoque">Quantidade em estoque</label>
+                    <input
+                        type="number"
+                        id="estoque"
+                        name="estoque"
+                        min="0"
+                        step="1"
+                        value="<%= produto.estoque ?? 0 %>"
+                        required
+                    >
+                </div>
+            </div>
+
+            <div class="campo">
+                <label>Imagem atual</label>
+
+                <% if (produto.imagem) { %>
+                    <img
+                        src="/uploads/<%= produto.imagem %>"
+                        alt="Imagem atual do produto"
+                        class="imagem-atual"
+                    >
+                <% } else { %>
+                    <p>Este produto ainda não possui imagem.</p>
+                <% } %>
+            </div>
+
+            <div class="campo">
+                <label for="imagem">Escolher outra imagem (opcional)</label>
+                <input
+                    type="file"
+                    id="imagem"
+                    name="imagem"
+                    accept="image/*"
+                >
+                <small>Deixe vazio para manter a imagem atual.</small>
+            </div>
+
+            <div class="form-acoes">
+                <button type="submit" class="btn-salvar">
+                    Salvar alterações
+                </button>
+
+                <a href="/admin/produtos" class="btn-cancelar">
+                    Cancelar
+                </a>
+            </div>
+        </form>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,502 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background: #f7f7f8;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+/* ==============================
+   NAVEGAÇÃO
+============================== */
+
+.navbar {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.navbar .nav-link {
+    transition: color 0.2s ease;
+}
+
+.navbar .nav-link:hover {
+    opacity: 0.8;
+}
+
+/* ==============================
+   CARDS
+============================== */
+
+.card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 16px 20px;
+}
+
+.card-body {
+    padding: 24px;
+}
+
+.card-header h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* ==============================
+   TABELAS
+============================== */
+
+.table {
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.table th {
+    padding: 14px 12px;
+    white-space: nowrap;
+}
+
+.table td {
+    padding: 12px;
+}
+
+.table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f3f5;
+}
+
+.table td .small {
+    margin-top: 4px;
+}
+
+/* ==============================
+   IMAGENS DOS PRODUTOS
+============================== */
+
+.produto-thumb {
+    width: 58px;
+    height: 66px;
+    object-fit: cover;
+    border-radius: 6px;
+    background: #eee;
+    border: 1px solid #e5e5e5;
+}
+
+.imagem-atual {
+    display: block;
+    max-width: 180px;
+    max-height: 200px;
+    object-fit: contain;
+    margin: 10px 0 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    background: #fff;
+}
+
+/* ==============================
+   BOTÕES GERAIS
+============================== */
+
+.btn,
+.form-control,
+.form-select {
+    border-radius: 7px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 500;
+    transition: background-color 0.2s ease,
+                border-color 0.2s ease,
+                box-shadow 0.2s ease,
+                transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn:focus-visible {
+    outline: 3px solid rgba(13, 110, 253, 0.25);
+    outline-offset: 2px;
+}
+
+.btn-sm {
+    min-height: 32px;
+    padding: 6px 12px;
+    font-size: 0.82rem;
+}
+
+/* ==============================
+   BOTÃO SALVAR
+============================== */
+
+.btn-salvar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 42px;
+    padding: 10px 20px;
+    background: #198754;
+    color: #fff;
+    border: 1px solid #198754;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-salvar:hover {
+    background: #146c43;
+    border-color: #146c43;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+/* ==============================
+   BOTÃO EDITAR
+============================== */
+
+.btn-editar {
+    background: #0d6efd;
+    color: #fff;
+    border: 1px solid #0d6efd;
+}
+
+.btn-editar:hover {
+    background: #0b5ed7;
+    border-color: #0b5ed7;
+    color: #fff;
+}
+
+/* ==============================
+   BOTÃO EXCLUIR
+============================== */
+
+.btn-excluir {
+    background: #dc3545;
+    color: #fff;
+    border: 1px solid #dc3545;
+}
+
+.btn-excluir:hover {
+    background: #bb2d3b;
+    border-color: #bb2d3b;
+    color: #fff;
+}
+
+/* ==============================
+   BOTÃO CANCELAR
+============================== */
+
+.btn-cancelar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 42px;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #555;
+    border: 1px solid #d6d9dc;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-cancelar:hover {
+    background-color: #f1f3f5;
+    color: #333;
+    border-color: #b8bec5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    transform: translateY(-1px);
+}
+
+/* ==============================
+   BOTÃO VOLTAR
+============================== */
+
+.btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 40px;
+    padding: 9px 16px;
+    background: #fff;
+    color: #495057;
+    border: 1px solid #ced4da;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-voltar:hover {
+    background: #e9ecef;
+    color: #212529;
+    border-color: #adb5bd;
+    transform: translateY(-1px);
+}
+
+/* ==============================
+   BOTÃO CADASTRAR
+============================== */
+
+.btn-cadastrar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 8px 14px;
+    border-radius: 7px;
+    font-weight: 500;
+}
+
+/* ==============================
+   AÇÕES DAS TABELAS
+============================== */
+
+.acoes-botoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.acoes-botoes form {
+    display: inline-flex;
+    margin: 0;
+}
+
+.table td:last-child {
+    min-width: 160px;
+}
+
+/* ==============================
+   FORMULÁRIOS
+============================== */
+
+.admin-form {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 25px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.campo {
+    margin-bottom: 18px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+    color: #343a40;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+}
+
+.form-control,
+.form-select {
+    padding: 10px 12px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+textarea.form-control {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-linha {
+    display: flex;
+    gap: 16px;
+}
+
+.form-linha .campo {
+    flex: 1;
+    min-width: 0;
+}
+
+.form-acoes {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+/* Mantém os botões de ação com a mesma altura */
+
+.form-acoes .btn-salvar,
+.form-acoes .btn-cancelar,
+.form-acoes .btn-voltar {
+    min-height: 42px;
+}
+
+/* ==============================
+   PÁGINAS ADMINISTRATIVAS
+============================== */
+
+.admin-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+.admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.admin-header h2 {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.pagina-acoes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* ==============================
+   MENSAGENS E ESTADOS VAZIOS
+============================== */
+
+.alert {
+    border-radius: 8px;
+}
+
+.text-muted {
+    color: #6c757d !important;
+}
+
+.badge {
+    font-weight: 500;
+}
+
+/* ==============================
+   RODAPÉ
+============================== */
+
+footer {
+    margin-top: 40px;
+}
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+
+@media (max-width: 768px) {
+    .card-body {
+        padding: 16px;
+    }
+
+    .card-header {
+        padding: 14px 16px;
+    }
+
+    .form-linha {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .admin-form {
+        padding: 18px;
+    }
+
+    .admin-header {
+        align-items: flex-start;
+    }
+
+    .table th,
+    .table td {
+        padding: 10px 8px;
+    }
+
+    .produto-thumb {
+        width: 48px;
+        height: 56px;
+    }
+
+    .acoes-botoes {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .card-header h4 {
+        font-size: 1.1rem;
+    }
+
+    .form-acoes {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-acoes .btn,
+    .form-acoes .btn-voltar {
+        width: 100%;
+    }
+
+    .btn-sm {
+        font-size: 0.78rem;
+    }
+
+    .pagina-acoes {
+        align-items: stretch;
+    }
+}

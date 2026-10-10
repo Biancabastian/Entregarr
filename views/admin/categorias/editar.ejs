@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar categoria | VB Store</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+</head>
+<body>
+
+    <main class="admin-container">
+        <div class="admin-header">
+            <div>
+                <h1>Editar categoria</h1>
+                <p>Atualize os dados da categoria.</p>
+            </div>
+
+            <a href="/admin/categorias" class="btn-voltar">Voltar</a>
+        </div>
+
+        <form
+            action="/admin/categorias/editar/<%= categoria.id %>"
+            method="POST"
+            class="admin-form"
+        >
+            <div class="campo">
+                <label for="nome">Nome da categoria</label>
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    value="<%= categoria.nome || '' %>"
+                    required
+                >
+            </div>
+
+            <div class="campo">
+                <label for="descricao">Descrição</label>
+                <textarea
+                    id="descricao"
+                    name="descricao"
+                    rows="5"
+                ><%= categoria.descricao || '' %></textarea>
+            </div>
+
+            <div class="form-acoes">
+                <button type="submit" class="btn-salvar">
+                    Salvar alterações
+                </button>
+
+                <a href="/admin/categorias" class="btn-cancelar">
+                    Cancelar
+                </a>
+            </div>
+        </form>
+    </main>
+
+</body>
+</html>
